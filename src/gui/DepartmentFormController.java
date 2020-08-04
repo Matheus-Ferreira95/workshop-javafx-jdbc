@@ -24,7 +24,7 @@ import model.exceptions.ValidationException;
 import model.services.DepartmentService;
 
 public class DepartmentFormController implements Initializable {
-	
+
 	private Department entity;
 	
 	private DepartmentService service;
@@ -83,7 +83,7 @@ public class DepartmentFormController implements Initializable {
 	private void notifyDataChangeListeners() {
 		for (DataChangeListener listener : dataChangeListeners) {
 			listener.onDataChanged();
-		}		
+		}
 	}
 
 	private Department getFormData() {
@@ -98,9 +98,10 @@ public class DepartmentFormController implements Initializable {
 		}
 		obj.setName(txtName.getText());
 		
-		if(exception.getErrors().size() > 0) {
+		if (exception.getErrors().size() > 0) {
 			throw exception;
-		}		
+		}
+		
 		return obj;
 	}
 
@@ -111,7 +112,7 @@ public class DepartmentFormController implements Initializable {
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		initializeNodes();		
+		initializeNodes();
 	}
 	
 	private void initializeNodes() {
